@@ -1,29 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kev's Portfolio</title>
-  <link rel="icon" href="https://kevs.digital/favicon.ico">
+  <link rel="icon" href="https://kevs.digital/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f4f4f9;
       color: #333;
+    }
+    header {
+      background: #4b6cb7;
+      color: white;
+      padding: 20px 0;
       text-align: center;
-      padding: 50px;
     }
-    h1 {
-      font-size: 3em;
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
       color: #4b6cb7;
+      margin-bottom: 10px;
     }
-    p {
-      font-size: 1.2em;
+    .project {
+      background: white;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .project a {
+      color: #4b6cb7;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #eee;
+      margin-top: 50px;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to Kev's Portfolio</h1>
-  <p>Check out my projects and experience!</p>
+
+  <header>
+    <h1>Kev's Portfolio</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi! I'm Kev, a passionate tech enthusiast who loves working on backend systems, infrastructure, and DevOps tools. I specialize in building practical solutions like Adminer deployments, EC2 configurations, and efficient pipelines.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>Adminer on EC2</h3>
+      <p>Deployed MySQL Adminer on EC2 using Nginx reverse proxy, with a custom subdomain and SSL certificate.</p>
+      <a href="https://github.com/blackroseidol777/website-domain" target="_blank">View Code</a>
+    </div>
+
+    <div class="project">
+      <h3>GitHub Portfolio Website</h3>
+      <p>This site you're viewing is hosted completely for free on GitHub Pages and mapped to a custom domain!</p>
+      <a href="https://github.com/blackroseidol777/website-domain" target="_blank">View Repo</a>
+    </div>
+  </section>
+
+  <section id="articles">
+    <h2>Documentation & Articles</h2>
+    <p>I write technical articles, guides, and documentation related to DevOps, infrastructure, and deployment best practices. You can find them on my Medium profile:</p>
+    <p><a href="https://medium.com/@kevin.degracia" target="_blank">Visit my Medium: @kevin.degracia</a></p>
+  </section>
+  
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>You can reach me at <strong>kevindegracia1997@gmail.com</strong> or through my GitHub profile below:</p>
+    <p><a href="https://github.com/blackroseidol777" target="_blank">GitHub: blackroseidol777</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Kev — Built with 💻 and hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></p>
+  </footer>
+
 </body>
 </html>
