@@ -12,28 +12,48 @@
       margin: 0;
       background: #f4f4f9;
       color: #333;
+      transition: background 0.3s, color 0.3s;
     }
+
     header {
       background: #4b6cb7;
       color: white;
       padding: 20px 0;
       text-align: center;
+      position: relative;
     }
+
     nav a {
       margin: 0 15px;
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
+
+    #toggleTheme {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      background: white;
+      color: #4b6cb7;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
     section {
       padding: 50px 20px;
       max-width: 800px;
       margin: auto;
     }
+
     h2 {
       color: #4b6cb7;
       margin-bottom: 10px;
     }
+
     .project {
       background: white;
       margin: 20px 0;
@@ -41,17 +61,49 @@
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
+
     .project a {
       color: #4b6cb7;
       text-decoration: none;
       font-weight: bold;
     }
+
     footer {
       text-align: center;
       padding: 20px;
       background: #eee;
       margin-top: 50px;
       font-size: 0.9em;
+    }
+
+    /* ---- DARK MODE STYLES ---- */
+    .dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+
+    .dark-mode header {
+      background: #1e1e2f;
+      color: white;
+    }
+
+    .dark-mode nav a {
+      color: #eee;
+    }
+
+    .dark-mode #toggleTheme {
+      background: #eee;
+      color: #1e1e2f;
+    }
+
+    .dark-mode .project {
+      background: #1e1e2f;
+      color: #eee;
+      box-shadow: 0 2px 6px rgba(255,255,255,0.1);
+    }
+
+    .dark-mode footer {
+      background: #1e1e2f;
     }
   </style>
 </head>
@@ -64,6 +116,7 @@
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
+    <button id="toggleTheme">🌙 Dark Mode</button>
   </header>
 
   <section id="about">
@@ -92,7 +145,7 @@
     <p>I write technical articles, guides, and documentation related to DevOps, infrastructure, and deployment best practices. You can find them on my Medium profile:</p>
     <p><a href="https://medium.com/@kevin.degracia" target="_blank">Visit my Medium: @kevin.degracia</a></p>
   </section>
-  
+
   <section id="contact">
     <h2>Contact</h2>
     <p>You can reach me at <strong>kevindegracia1997@gmail.com</strong> or through my GitHub profile below:</p>
@@ -102,6 +155,24 @@
   <footer>
     <p>© 2025 Kev — Built with 💻 and hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></p>
   </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('toggleTheme');
+    const body = document.body;
+
+    // Load theme from storage
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      toggleBtn.textContent = '☀️ Light Mode';
+    }
+
+    toggleBtn.onclick = () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      toggleBtn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    };
+  </script>
 
 </body>
 </html>
